@@ -1,0 +1,111 @@
+.container{
+   
+    width: 50vw;
+    min-width: 550px;
+    height: 60vh;
+    min-height: 400px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+
+}
+h1{
+    color: #4283C0;
+}
+.imagemLogo{
+    
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.imagemLogo img{
+    width: 100%;
+    height: 60%;
+}
+.partLogin{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12%;
+}
+.formLogin{
+   
+    width: 70%;
+    min-width: 250px;
+    height: 30%;
+    min-height: 160px;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.divInputLogin{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.divInputPass{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.formLogin input{
+    width: 100%;
+    height: 45px;
+    margin: 0 auto;
+    border: 0;
+    border-bottom: 2px #4283C0 solid;
+    padding-left: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    color: #4283C0;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+.formLogin input:focus{
+    outline: none;
+
+}
+.loginIcon{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-left: 10px;
+}
+.passIcon{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-left: 10px;
+}
+.eyeIcon{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-left: max(15%, 200px);
+    cursor: pointer;
+}
+
+.buttonLogin{
+    width: 50%;
+    height: 40px;
+    color: #4283C0;
+    border: 1px solid #4283C0;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.buttonLogin:hover{
+    cursor: pointer;
+    color: white;
+    border-color: white;
+    background-color: #4283C0;
+}
