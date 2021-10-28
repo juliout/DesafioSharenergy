@@ -32,10 +32,7 @@ export default function Login() {
   }
   async function fazerLogin(){
     try{
-      const response = await Api.post('/user',{
-        usuario : loginUser,
-        senha : passWordUser
-      })
+      
     }catch (e){
       setDeuError(true)
     }

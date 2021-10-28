@@ -9,8 +9,8 @@ export default function HamburgerMenu() {
         <span>Olá, Usuario</span>
 
         <ul className='ultPerfilAdm'>
-            <Link to='/users/usina'><li>Usina</li></Link>
-            <Link to='/users/clients'><li>Clients</li></Link>
+            <Link to='/user/usina'><li>Usina</li></Link>
+            <Link to='/user/clients'><li>Clients</li></Link>
             <Link><li>Gerenciar</li></Link>
         </ul>
         <button>Sair</button>

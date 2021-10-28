@@ -20,13 +20,13 @@ export default function Painel() {
     {hamburger ? <HamburgerMenu/> : null}
 
     <div className='perfilContainer'>
-      <Link to='/users/usina'>
+      <Link to='/user/usina'>
         <div className='link'>
           <img src="/images/usina.png" alt="" className='imgLink'/>
           <span className='spanLink'>Setor de progresso da usina</span>
         </div>
       </Link>
-      <Link to='/users/clients'>
+      <Link to='/user/clients'>
         <div className='link'>
           <img src="/images/users.png" alt="" className='imgLink'/>
           <span className='spanLink'>Especificações dos Usuarios</span>
