@@ -1,0 +1,53 @@
+.admLogado{
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    background-color: white;
+    width: 10vw;
+    min-width: 150px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.admLogado img{
+    width: 70px;
+    height: 65px;
+    margin: 5px 0;
+}
+.admLogado span{
+    font-size: 20px;
+    font-weight: 700;
+}
+.admLogado button{
+    width: 50px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.ultPerfilAdm{
+
+    width: 150px;    
+    height: 120px;
+    margin-top: 5px;
+}
+.ultPerfilAdm li{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 3px;
+    border: 1px silver solid;
+    box-sizing: border-box;
+    padding: 2px;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+.ultPerfilAdm li:hover{
+    cursor: pointer;
+    background-color: #9DB4DE;
+    border: 1px solid #3B66B2;
+    color: white;
+}

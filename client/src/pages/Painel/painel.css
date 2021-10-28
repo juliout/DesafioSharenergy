@@ -1,0 +1,59 @@
+.menuHam{
+    position: fixed;
+    right: 70px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+.perfilContainer{
+    background-color: white;
+    width: auto;
+    max-width: 1200px;
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.link{
+    
+    width: 10vw;
+    min-width: 150px;
+    max-width: 200px;
+    height: 25vh;
+    min-height: 200px;
+    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+    text-align: center;
+    border: 1px silver solid;
+    margin-right: 20px ;
+    margin-top: 10px;
+}
+
+.link:hover{
+  background-color: #9DB4DE;
+  border: 2px solid #3B66B2;
+
+}
+
+.imgLink{
+    width: 90%;
+    height: 70%;
+}
+.spanLink{
+    text-decoration: none;
+    list-style: none;
+    font-size: 15px;
+    color: black;
+    font-weight: 700;
+}

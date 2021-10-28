@@ -10,8 +10,8 @@ export default function Routes() {
     <Switch>
         <Route exact path='/login' component={Login}/>
         <Route exact path='/user/painel' component={Painel}/>
-        <Route exact path='/user/Usina' component={Usina}/>
-        <Route exact path='/user/Clients' component={Clients}/>        
+        <Route exact path='/user/usina' component={Usina}/>
+        <Route exact path='/user/clients' component={Clients}/>        
     </Switch>
     </BrowserRouter>
     );
