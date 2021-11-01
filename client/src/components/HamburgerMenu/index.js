@@ -11,7 +11,8 @@ export default function HamburgerMenu() {
         <ul className='ultPerfilAdm'>
             <Link to='/user/usina'><li>Usina</li></Link>
             <Link to='/user/clients'><li>Clients</li></Link>
-            <Link><li>Gerenciar</li></Link>
+            <Link to='/user/registrar'><li>Registrar</li></Link>
+            <Link to='/user/painel'><li>Painel</li></Link>
         </ul>
         <button>Sair</button>
     </div>

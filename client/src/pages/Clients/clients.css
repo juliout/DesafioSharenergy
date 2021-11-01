@@ -1,0 +1,98 @@
+.clientsContainer{
+    width: 60vw;
+    height: auto;
+    min-height: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.cInput{
+    width: 50%;
+    height: 20%;
+    min-height: 50px;
+    
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 5px;
+}
+.cInput input{
+    width: 80%;
+    min-width: 200px;
+    border: 0;
+    border-bottom: 2px solid #4283C0;
+    outline: 0;
+    padding-left: 5px;
+}
+
+.cInput button{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 3px;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.cInput button:hover{
+    border: 1px solid #4283C0;    
+    box-sizing: border-box;
+}
+
+.cImgBusca{
+    width: 30px;
+    height: 30px;
+    
+}
+.cListar{
+    
+    width: 100%;
+    height: 80%;
+    min-height: 300px;
+    border: 1px solid #4283C0;
+    box-sizing: border-box;
+}
+.cTable{
+    width: 100%;
+    overflow: scroll;
+    
+}
+
+.cTable th{
+    width: 20%;
+    text-align: center;
+    background-color: #4283C0;
+    color: white;
+    font-size: 15px;
+    padding: 2px;
+}
+.cTable td{
+    width: 20%;
+    text-align: center;
+    font-size: 15px;
+}
+.cTrLista:hover{
+    background-color: #83ABD6;
+    color: white;
+    cursor: pointer;
+}
+
+.cTable button{
+    width: 50px;
+    margin: 2px;
+    color: #4283C0;
+    border-radius: 5px;
+    border: 0;
+}
+.cTable button:hover{
+    cursor: pointer;
+    border: 1px solid #4283C0;
+    
+}

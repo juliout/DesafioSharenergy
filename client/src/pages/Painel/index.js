@@ -34,8 +34,8 @@ export default function Painel() {
       </Link>
       <Link>
         <div className='link'>
-          <img src="/images/engrenagem.png" alt="" className='imgLink'/>
-          <span className='spanLink'>Gerenciamento</span>
+          <img src="/images/registrar.png" alt="" className='imgLink'/>
+          <span className='spanLink'>Registrar novo cliente</span>
         </div>
       </Link>
       <Link to='/login'>

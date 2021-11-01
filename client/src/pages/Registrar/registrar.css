@@ -1,0 +1,53 @@
+.rContainer{
+    background-color: white;
+    width: 25vw;
+    min-width: 450px;
+    height: auto;
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.rContainer button{
+    width: 20%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #83ABD6;
+}
+.rContainer button:hover{
+    cursor: pointer;
+    background-color: #83ABD6;
+    color: white;
+}
+
+.rImagemLogo{
+    width: 70px;
+    height: 70px;
+}
+
+.rForm{
+    width: 70%;
+    height: 300px;
+
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.rForm input{
+    width: 80%;
+    height: 40px;
+    outline: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 0;
+    border-bottom: 1px solid #83ABD6;
+}
+.rForm input:focus{
+    border-bottom: 1px solid #275886;
+}
