@@ -65,7 +65,7 @@
     
 }
 
-.cTable th{
+.cTable thead{
     width: 20%;
     text-align: center;
     background-color: #4283C0;

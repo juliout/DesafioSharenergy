@@ -32,7 +32,7 @@ export default function Painel() {
           <span className='spanLink'>Especificações dos Usuarios</span>
         </div>
       </Link>
-      <Link>
+      <Link to='/user/registrar'>
         <div className='link'>
           <img src="/images/registrar.png" alt="" className='imgLink'/>
           <span className='spanLink'>Registrar novo cliente</span>

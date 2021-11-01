@@ -7,6 +7,8 @@ const cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const dados = require('./routes/dados');
+const novoUsuario = require('./routes/newUser')
+const ClientList = require('./routes/ClientList')
 
 const app = express();
 
@@ -28,8 +30,19 @@ app.use((req,res,next)=>{
   next();
 })
 
+const Mongoose = require('mongoose')
+
+Mongoose.Promise = global.Promise
+Mongoose.connect("mongodb://localhost/sharenergy").then(()=>{
+    console.log('conectado')
+}).catch((e)=>{
+    console.log('não conectou' + e )
+})
+
 app.use('/', indexRouter);
 app.use('/dadosUsina', dados);
+app.use('/novoUsuario', novoUsuario);
+app.use('/listarClientes', ClientList)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
