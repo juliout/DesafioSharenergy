@@ -4,15 +4,20 @@ import HamburgerMenu from '../../components/HamburgerMenu';
 import { Api } from '../../api'
 import ModalError from '../../components/modalError';
 import DeletConfirm from '../../components/DeletConfirm';
+import EditarClient from '../../components/EditarClient';
 
 export default function Clients() {
   const [hamburger, setHamburger] = useState(false)
   const [clients, setClients] = useState([])
   const [sInput, setSIput] = useState('')
+
   const [modal, setModal] = useState(false)
   const [status, setStatus] = useState(false)
+
   const [modalDeletar, setmodalDeletar] = useState(false)
   const [idClient, setIdClient] = useState('')
+
+  const [modalEditar, setModalEditar] = useState(false)
 
 
   function openHamburger(){
@@ -98,7 +103,14 @@ export default function Clients() {
                         setIdClient(client._id)
                         setmodalDeletar(true)
                       }}>x</button>
-                      <button>editar</button>
+                      <button onClick={()=>{
+                        setIdClient(client._id)
+                        setModalEditar(true)
+                      }}
+                      
+                      >
+                        editar
+                      </button>
                     </td>
                   </tr>
                 </tbody>
@@ -113,6 +125,7 @@ export default function Clients() {
       </div>
       {modal === false ? null : <ModalError closeModal={setModal} message={status.message} conclusao={status.status}/>}
       {modalDeletar === false ? null : <DeletConfirm idClients={idClient} closeModal={setmodalDeletar}/>}
+      {modalEditar === false ? null : <EditarClient closeModal={setModalEditar} idClients={idClient}/>}
     </>
   );
 }

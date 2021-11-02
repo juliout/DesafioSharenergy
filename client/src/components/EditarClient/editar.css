@@ -1,0 +1,71 @@
+.editarContaine{
+    background-color: rgba(0, 0, 0, 0.158);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editarModal{
+    width: 50%;
+    max-width: 400px;
+    height: 60%;
+    background-color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.editarModal form{
+    width: 80%;
+    height: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.editarModal input{
+    width: 90%;
+    height: 35px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 0;
+    border-bottom: 1px solid #4283C0;
+    outline: 0;
+}
+.editarModal input:focus{
+    border-bottom: 2px solid #4283C0;
+}
+.editarModal div{
+    width: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btnAtualizar{
+    width: 80px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #4283C0;
+    color: #4283C0;
+}
+.btnCancelar{
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #4283C0;
+    color: #4283C0;
+}
+.editarModal button:hover{
+    cursor: pointer;
+    background-color: #4283C0;
+    border: 1px solid #275785;
+    color: white;
+}
