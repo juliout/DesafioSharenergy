@@ -2,11 +2,18 @@ import React, {useState, useEffect} from 'react';
 import './clients.css'
 import HamburgerMenu from '../../components/HamburgerMenu';
 import { Api } from '../../api'
+import ModalError from '../../components/modalError';
+import DeletConfirm from '../../components/DeletConfirm';
 
 export default function Clients() {
   const [hamburger, setHamburger] = useState(false)
   const [clients, setClients] = useState([])
   const [sInput, setSIput] = useState('')
+  const [modal, setModal] = useState(false)
+  const [status, setStatus] = useState(false)
+  const [modalDeletar, setmodalDeletar] = useState(false)
+  const [idClient, setIdClient] = useState('')
+
 
   function openHamburger(){
     if (hamburger === false){
@@ -25,7 +32,11 @@ export default function Clients() {
         setClients(data.data)
       })
     } catch (e) {
-      
+      setStatus({
+        status:'Error',
+        message: e.response.data.message
+      })
+      setModal(true)      
     }
   }
   
@@ -35,7 +46,12 @@ export default function Clients() {
 
       Api.get('/listarClientes').then(response => { 
         setClients(response.data)
-        console.log(response.data)
+      }).catch( e =>{
+        setStatus({
+          status:'Error',
+          message: e.response.data.message
+        })
+        setModal(true)
       })
     }
     findClient() 
@@ -63,6 +79,7 @@ export default function Clients() {
                 <th>Nome</th>
                 <th>id_Usina</th>
                 <th>Percentual</th>
+                <th>Ganhos</th>
                 <th>Editar</th>
               </tr>
             </thead>
@@ -75,8 +92,12 @@ export default function Clients() {
                     <td>{client.nome}</td>
                     <td>{client.usina}</td>
                     <td>{client.porcentagem}%</td>
+                    <td>10</td>
                     <td>
-                      <button>x</button>
+                      <button onClick={()=>{
+                        setIdClient(client._id)
+                        setmodalDeletar(true)
+                      }}>x</button>
                       <button>editar</button>
                     </td>
                   </tr>
@@ -90,6 +111,8 @@ export default function Clients() {
         </div>
 
       </div>
+      {modal === false ? null : <ModalError closeModal={setModal} message={status.message} conclusao={status.status}/>}
+      {modalDeletar === false ? null : <DeletConfirm idClients={idClient} closeModal={setmodalDeletar}/>}
     </>
   );
 }

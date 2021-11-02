@@ -1,0 +1,50 @@
+.deletContainer{
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.205);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dModal{
+    width: 40%;
+    max-width: 400px;
+    height: 20%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dModal div{
+    width: 50%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btnConfirm{
+    height: 35px;
+    width: 80px;
+    border: 1px #4182be solid;
+    color: #3b7cb8;
+}
+.btnConfirm:hover{
+    cursor: pointer;
+    border: 2px solid #4283C0;
+    color: #4283C0
+}
+.btnCancel{
+    width: 70px;
+    border: 1px rgb(167, 159, 159) solid;
+    color: rgb(151, 140, 140);
+}
+.btnCancel:hover{
+    cursor: pointer;
+    border: 2px solid #4283C0;
+    color: #4283C0;
+}

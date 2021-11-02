@@ -7,7 +7,7 @@
     background-color: white;
     border-radius: 5px;
     display: flex;
-
+    z-index: 88;
 }
 h1{
     color: #4283C0;

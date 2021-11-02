@@ -2,7 +2,7 @@ import React, {useState} from 'react';
  
 import './login.css'
 import { Api } from '../../api'
-import Error from '../../components/Error'
+import ModalError from '../../components/modalError'
 
 
 export default function Login() {
@@ -60,7 +60,7 @@ export default function Login() {
         </form>
         <button className='buttonLogin' onClick={()=>{fazerLogin()}}>Login</button>
      </div>
-    {deuErro === true ? <Error closeModal={setDeuError}/> : null}
+    {deuErro === true ? <ModalError closeModal={setDeuError}/> : null}
    </div>
  );
 }
