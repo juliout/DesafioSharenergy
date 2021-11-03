@@ -1,8 +1,12 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from 'react-router-dom'
 import './index.css'
+import { AuthContext } from '../../contexts/auth';
 
 export default function HamburgerMenu() {
+
+    const { Sair } = useContext(AuthContext)
+
  return (
     <div className='admLogado'>
         <img src='/images/logado.jpg' alt="" />
@@ -14,7 +18,7 @@ export default function HamburgerMenu() {
             <Link to='/user/registrar'><li>Registrar</li></Link>
             <Link to='/user/painel'><li>Painel</li></Link>
         </ul>
-        <button>Sair</button>
+        <button onClick={()=> Sair()} >Sair</button>
     </div>
  );
 }

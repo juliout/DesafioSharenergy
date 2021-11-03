@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './painel.css'
 import { Link } from 'react-router-dom'
 import HamburgerMenu from '../../components/HamburgerMenu';
+import { AuthContext } from '../../contexts/auth';
 
 export default function Painel() {
+
+  const { Sair } = useContext(AuthContext)
   const [hamburger, setHamburger] = useState(false)
+  
   function openHamburger(){
     if(hamburger === false){
       setHamburger(true)
@@ -38,7 +42,7 @@ export default function Painel() {
           <span className='spanLink'>Registrar novo cliente</span>
         </div>
       </Link>
-      <Link to='/login'>
+      <Link onClick={()=>{Sair()}}>
         <div className='link'>
           <img src="/images/exit.png" alt="" className='imgLink'/>
           <span className='spanLink'>Sair</span>

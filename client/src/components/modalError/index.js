@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import './erro.css'
 
 export default function ModalError({closeModal, message, conclusao, reload}) {

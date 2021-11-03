@@ -1,19 +1,27 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from 'react';
  
 import './login.css'
-import { Api } from '../../api'
 import ModalError from '../../components/modalError'
+
+import { AuthContext } from '../../contexts/auth';
+
 
 
 export default function Login() {
+
+  const { Login } = useContext(AuthContext)
 
   const [typeInput, setTypeInput] = useState({
     type : 'password',
     img : 'openpassIcon'
   })
+
   const [loginUser, setLoginUser] = useState('')
   const [passWordUser, setPassWordUser] = useState('')
+
   const [deuErro, setDeuError] = useState(false)
+  const [status, setStatus] = useState('')
+  
 
   function changeImg(){
     
@@ -30,16 +38,25 @@ export default function Login() {
       })
     }
   }
+
   async function fazerLogin(){
-    try{
-      
-    }catch (e){
+
+    try {
+      if(loginUser !== '' || passWordUser !== ''){
+        Login(loginUser,passWordUser)
+      }
+    } catch (e) {
+      setStatus({
+        status: 'Error',
+        message: 'não foi possivel logar'
+      })
       setDeuError(true)
     }
-  }
- return (
 
-   <div className="container">
+  }
+  return (
+
+  <div className="container">
      <div className="imagemLogo">
         <img src="/images/8590.jpg" alt="" />
      </div>
@@ -49,18 +66,18 @@ export default function Login() {
         <form className='formLogin'>
           <div className='divInputLogin'>
             <img src="/images/loginLogo.png" alt="" className='loginIcon' />
-            <input type="text" name="login" id="ILogin" autoComplete='off' onChange={(e)=>{setLoginUser(e.target.value)}}/>
+            <input type="email" name="login" id="ILogin" autoComplete='off' onChange={(e)=>{setLoginUser(e.target.value)}} placeholder='nome de Usuario'/>
           </div>
 
           <div className='divInputPass'>
             <img src="/images/passIcon.png" alt="" className='passIcon'/>
-            <input type={typeInput.type} name="password" id="IPassword" onChange={(e)=>{setPassWordUser(e.target.value)}}/>
+            <input type={typeInput.type} name="pass" id="IPassword" onChange={(e)=>{setPassWordUser(e.target.value)}} placeholder='digite sua senha'autoComplete="off" />
             <img src={`/images/${typeInput.img}.png`} alt="" className='eyeIcon' onClick={()=>{changeImg()}}/>
           </div>
         </form>
         <button className='buttonLogin' onClick={()=>{fazerLogin()}}>Login</button>
      </div>
-    {deuErro === true ? <ModalError closeModal={setDeuError}/> : null}
+    {deuErro === true ? <ModalError closeModal={setDeuError} conclusao={status.status} message={status.message}/> : null}
    </div>
- );
+  );
 }
