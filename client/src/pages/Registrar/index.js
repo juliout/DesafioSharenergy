@@ -87,7 +87,7 @@ export default function Registrar() {
               <form className='rForm'>
                   <input type="text" placeholder='Nome' onChange={(e)=>{ setNome(e.target.value) }}/>
                   <input type="number" placeholder='Usina' onChange={(e)=>{ setUsina(e.target.value) }}/>
-                  <input type="number" max='100' placeholder='percentual' onChange={(e)=>{ setPercentual(e.target.value) }}/>
+                  <input type="number" max='100' min='0' placeholder='percentual' onChange={(e)=>{ setPercentual(e.target.value) }}/>
               </form>
               <button onClick={()=>{CadastrarCliente(novoCliente)}}>Salvar</button>
 

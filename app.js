@@ -10,7 +10,7 @@ const dados = require('./routes/dados');
 const novoUsuario = require('./routes/newUser')
 const ClientList = require('./routes/ClientList')
 const login = require('./routes/Login')
-
+const register = require('./routes/Register')
 const app = express();
 
 // view engine setup
@@ -45,6 +45,7 @@ app.use('/dadosUsina', dados);
 app.use('/novoUsuario', novoUsuario);
 app.use('/listarClientes', ClientList)
 app.use('/login', login)
+app.use('/registrar', register)
 
 
 // catch 404 and forward to error handler

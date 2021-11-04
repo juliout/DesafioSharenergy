@@ -1,14 +1,20 @@
 
 import './erro.css'
 
-export default function ModalError({closeModal, message, conclusao, reload}) {
+export default function ModalError({closeModal, message, conclusao, reload, redirect}) {
   
   function isReload(value){
     if(value === true){
       window.location.reload();
     }
   }
-  isReload()
+  
+  function isRedirect(value){
+    if(value === true){
+      window.location.href = '/'
+    }  
+  }
+
  return (
    <div className='erroModal'>
        <div className="modalE">
@@ -16,7 +22,8 @@ export default function ModalError({closeModal, message, conclusao, reload}) {
             <span>{message}</span>
             <button className='btnClose' onClick={()=>{
               closeModal(false)
-              isReload(reload)            
+              isReload(reload)
+              isRedirect(redirect)            
             }}>Ok</button>
        </div>
    </div>

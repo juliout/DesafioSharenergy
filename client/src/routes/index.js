@@ -2,6 +2,7 @@ import { Switch } from 'react-router-dom'
 import Route from './Route'
 
 import Login from '../pages/Login'
+import SignUp from '../pages/signUp'
 
 import Painel from '../pages/Painel'
 import Usina from '../pages/Usina';
@@ -12,6 +13,7 @@ export default function Routers() {
     return (    
         <Switch>
             <Route exact path='/' component={Login}/>
+            <Route exact path='/signup' component={SignUp}/>
 
             <Route exact path='/user/painel' component={Painel} isPrivate/>
             <Route exact path='/user/usina' component={Usina} isPrivate/>

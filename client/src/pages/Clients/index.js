@@ -18,6 +18,8 @@ export default function Clients() {
   const [idClient, setIdClient] = useState('')
 
   const [modalEditar, setModalEditar] = useState(false)
+  
+  const [producaoTotal , setProducaoTotal] = useState('')
 
 
   function openHamburger(){
@@ -44,6 +46,53 @@ export default function Clients() {
       setModal(true)      
     }
   }
+
+  function dividir( base, divisor ){
+    return base / divisor
+  }
+
+  function calcularGanhos(){
+    
+    
+    
+    Api.get('/dadosUsina').then((response)=>{
+    
+    const data = response.data
+    
+    const arrayIntervalo = []
+    const arrayPotencia = []
+
+    let count = 1
+    let indexTotal = 0
+    
+    data.forEach((rest) => {
+
+      if(data[count]){
+        let resultado = data[count].tempo_h - rest.tempo_h
+
+        arrayIntervalo.push(resultado)
+        arrayPotencia.push(rest.potencia_kW)
+
+        count++
+        indexTotal++
+      }else{
+        arrayIntervalo.push(0)
+      }
+
+    })
+    
+
+    const somaIntervalo = arrayIntervalo.reduce((acc, elem) => acc + elem , 0)
+    const mediaIntervalo = somaIntervalo / indexTotal
+
+    const somaPotencia = arrayPotencia.reduce((acc, elem) => acc + elem , 0)
+    
+    const producaoTotal = mediaIntervalo * somaPotencia
+    
+    const valorTotal =  producaoTotal * 0.95    
+    setProducaoTotal(valorTotal)
+    })
+  }
   
   useEffect(() => {
 
@@ -51,6 +100,7 @@ export default function Clients() {
 
       Api.get('/listarClientes').then(response => { 
         setClients(response.data)
+        calcularGanhos()
       }).catch( e =>{
         setStatus({
           status:'Error',
@@ -97,7 +147,7 @@ export default function Clients() {
                     <td>{client.nome}</td>
                     <td>{client.usina}</td>
                     <td>{client.porcentagem}%</td>
-                    <td>10</td>
+                    <td>R$ {Math.round(dividir(producaoTotal, client.porcentagem))}</td>
                     <td>
                       <button onClick={()=>{
                         setIdClient(client._id)

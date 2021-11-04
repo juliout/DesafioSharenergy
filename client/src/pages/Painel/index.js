@@ -42,12 +42,12 @@ export default function Painel() {
           <span className='spanLink'>Registrar novo cliente</span>
         </div>
       </Link>
-      <Link onClick={()=>{Sair()}}>
+      <div onClick={()=>{Sair()}}>
         <div className='link'>
           <img src="/images/exit.png" alt="" className='imgLink'/>
           <span className='spanLink'>Sair</span>
         </div>
-      </Link>
+      </div>
 
     </div>
     </>
