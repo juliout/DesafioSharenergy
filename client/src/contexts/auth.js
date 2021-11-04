@@ -33,8 +33,6 @@ export default function AuthProvider({ children }){
                 email: email,
                 senha: senha
             })
-
-            console.log(response)
             const data = {
                 id: response.data._id,
                 email: response.data.email                

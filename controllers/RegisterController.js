@@ -6,7 +6,6 @@ const Usuario = mongoose.model('usuarios')
 module.exports.register = async ( req,res ) => {
     try {
         const {usuario, senha} = req.body
-        console.log(req.body)
 
         new Usuario({
             email: usuario,
@@ -17,6 +16,6 @@ module.exports.register = async ( req,res ) => {
             res.status(400).send({message: 'erro ao cadastrar'})
         })
     } catch (e) {
-        
+        res.status(400).send({message: 'erro ao cadastrar'})
     }
 }
